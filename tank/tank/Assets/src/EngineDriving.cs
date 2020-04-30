@@ -8,10 +8,8 @@ public class EngineDriving : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow) ||
-            Input.GetKeyDown(KeyCode.UpArrow) ||
-            Input.GetKeyDown(KeyCode.LeftArrow) ||
-            Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetButton("Horizontal") ||
+            Input.GetButton("Vertical"))
         {
             if (!engineRun.isPlaying)
             {
@@ -19,10 +17,8 @@ public class EngineDriving : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.DownArrow) &&
-            Input.GetKeyUp(KeyCode.UpArrow) &&
-            Input.GetKeyUp(KeyCode.LeftArrow) &&
-            Input.GetKeyUp(KeyCode.RightArrow))
+        if (!Input.GetButton("Horizontal") &&
+            !Input.GetButton("Vertical"))
         {
             engineRun.Stop();
         }
