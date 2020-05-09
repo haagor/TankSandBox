@@ -24,14 +24,15 @@ Hell let loose is my first experience with tank multiplayer. The crew is  compos
 
 I star with a simple terrain look like cubic desert and a nice small tank. I put some colliders, write a script to move the tank, add engine sound...
 
-it's a cool start, but I want a better tank simulation. I discover then the WheelCollider. Next I explore the different strategies to simulate tank tracks. It's seem clear at this step that I have to focus on specifics things for learn and stop to rush a nice result. So I start to experiment the WheelCollider.
+It's a cool start, but I want a better tank simulation. I discover then the WheelCollider. Next I explore the different strategies to simulate tank tracks. It's seem clear at this step that I have to focus on specifics things for learn and stop to rush a nice result. So I start to experiment the WheelCollider.
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/CaptureWheelCollider2.PNG)
 
-Next I follow this tutorial [https://habr.com/en/post/116088/] to deep dive in one strategy to simulate tank tracks.
+Next I follow this tutorial [https://habr.com/en/post/116088/] to deep dive to one simulate tank tracks strategy.
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/CaptureTrack1.PNG)
 
 ---
 
 Simon P
+
