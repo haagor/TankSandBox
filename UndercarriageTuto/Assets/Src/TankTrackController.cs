@@ -92,4 +92,118 @@ public class TankTrackController : MonoBehaviour
         return result; //12
     }
 
+    void FixedUpdate()
+    {
+
+        UpdateWheels(); //1  
+
+    }
+
+
+    public void UpdateWheels()
+    { //1  
+        float delta = Time.fixedDeltaTime;  //2 
+
+        float trackRpm = CalculateSmoothRpm(leftTrackWheelData); //3		 
+
+        foreach (WheelData w in leftTrackWheelData)
+        {  //4 
+            w.wheelTransform.localPosition = CalculateWheelPosition(w.wheelTransform, w.col, w.wheelStartPos); //5 
+            w.boneTransform.localPosition = CalculateWheelPosition(w.boneTransform, w.col, w.boneStartPos); //6     
+
+            w.rotation = Mathf.Repeat(w.rotation + delta * trackRpm * 360.0f / 60.0f, 360.0f);  //7 
+            w.wheelTransform.localRotation = Quaternion.Euler(w.rotation, w.startWheelAngle.y, w.startWheelAngle.z); //8 			 
+
+        }
+
+
+        leftTrackTextureOffset = Mathf.Repeat(leftTrackTextureOffset + delta * trackRpm * trackTextureSpeed / 60.0f, 1.0f); //9 
+        leftTrack.GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, -leftTrackTextureOffset)); //10 
+
+        trackRpm = CalculateSmoothRpm(rightTrackWheelData);  //3 
+
+        foreach (WheelData w in rightTrackWheelData)
+        {  //4   
+            w.wheelTransform.localPosition = CalculateWheelPosition(w.wheelTransform, w.col, w.wheelStartPos); //5 
+            w.boneTransform.localPosition = CalculateWheelPosition(w.boneTransform, w.col, w.boneStartPos); //6 
+
+            w.rotation = Mathf.Repeat(w.rotation + delta * trackRpm * 360.0f / 60.0f, 360.0f);  //7 
+            w.wheelTransform.localRotation = Quaternion.Euler(w.rotation, w.startWheelAngle.y, w.startWheelAngle.z);  //8 
+
+
+        }
+
+        rightTrackTextureOffset = Mathf.Repeat(rightTrackTextureOffset + delta * trackRpm * trackTextureSpeed / 60.0f, 1.0f);  ///9 
+        rightTrack.GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, -rightTrackTextureOffset));  //10 
+
+        for (int i = 0; i < leftTrackUpperWheels.Length; i++)
+        {  //11 
+            leftTrackUpperWheels[i].localRotation = Quaternion.Euler(leftTrackWheelData[0].rotation, leftTrackWheelData[0].startWheelAngle.y, leftTrackWheelData[0].startWheelAngle.z);  //11 
+        }
+
+        for (int i = 0; i < rightTrackUpperWheels.Length; i++)
+        {  //11 
+            rightTrackUpperWheels[i].localRotation = Quaternion.Euler(rightTrackWheelData[0].rotation, rightTrackWheelData[0].startWheelAngle.y, rightTrackWheelData[0].startWheelAngle.z);  //11 
+        }
+    }
+
+
+    private float CalculateSmoothRpm(WheelData[] w)
+    { //12 
+        float rpm = 0.0f;
+
+        List<int> grWheelsInd = new List<int>(); //13 
+
+        for (int i = 0; i < w.Length; i++)
+        { //14 
+            if (w[i].col.isGrounded)
+            {  //14 
+                grWheelsInd.Add(i); //14 
+            }
+        }
+
+        if (grWheelsInd.Count == 0)
+        {  //15   
+            foreach (WheelData wd in w)
+            {  //15 
+                rpm += wd.col.rpm;  //15				 
+            }
+
+            rpm /= w.Length; //15 
+
+        }
+        else
+        {  //16 
+
+            for (int i = 0; i < grWheelsInd.Count; i++)
+            {  //16 
+                rpm += w[grWheelsInd[i]].col.rpm; //16	 
+            }
+
+            rpm /= grWheelsInd.Count; //16 
+        }
+
+        return rpm; //17 
+    }
+
+
+    private Vector3 CalculateWheelPosition(Transform w, WheelCollider col, Vector3 startPos)
+    {  //18 
+        WheelHit hit;
+
+        Vector3 lp = w.localPosition;
+        if (col.GetGroundHit(out hit))
+        {
+            lp.y -= Vector3.Dot(w.position - hit.point, transform.up) - wheelRadius;
+
+        }
+        else
+        {
+            lp.y = startPos.y - suspensionOffset;
+
+        }
+
+        return lp;
+    }
+
 }
