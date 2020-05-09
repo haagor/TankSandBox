@@ -92,61 +92,127 @@ public class TankTrackController : MonoBehaviour
         return result; //12
     }
 
+    public float rotateOnStandTorque = 1500.0f; //1
+    public float rotateOnStandBrakeTorque = 500.0f; //2
+    public float maxBrakeTorque = 1000.0f; //3
+
     void FixedUpdate()
     {
+        float accelerate = 0;
+        float steer = 0;
 
-        UpdateWheels(); //1  
+        accelerate = Input.GetAxis("Vertical");  //4
+        steer = Input.GetAxis("Horizontal"); //4
 
+        UpdateWheels(accelerate, steer); //5 
     }
 
 
-    public void UpdateWheels()
-    { //1  
-        float delta = Time.fixedDeltaTime;  //2 
+    public void UpdateWheels(float accel, float steer)
+    { //5
+        float delta = Time.fixedDeltaTime;
 
-        float trackRpm = CalculateSmoothRpm(leftTrackWheelData); //3		 
+        float trackRpm = CalculateSmoothRpm(leftTrackWheelData);
 
         foreach (WheelData w in leftTrackWheelData)
-        {  //4 
-            w.wheelTransform.localPosition = CalculateWheelPosition(w.wheelTransform, w.col, w.wheelStartPos); //5 
-            w.boneTransform.localPosition = CalculateWheelPosition(w.boneTransform, w.col, w.boneStartPos); //6     
+        {
+            w.wheelTransform.localPosition = CalculateWheelPosition(w.wheelTransform, w.col, w.wheelStartPos);
+            w.boneTransform.localPosition = CalculateWheelPosition(w.boneTransform, w.col, w.boneStartPos);
 
-            w.rotation = Mathf.Repeat(w.rotation + delta * trackRpm * 360.0f / 60.0f, 360.0f);  //7 
-            w.wheelTransform.localRotation = Quaternion.Euler(w.rotation, w.startWheelAngle.y, w.startWheelAngle.z); //8 			 
+            w.rotation = Mathf.Repeat(w.rotation + delta * trackRpm * 360.0f / 60.0f, 360.0f);
+            w.wheelTransform.localRotation = Quaternion.Euler(w.rotation, w.startWheelAngle.y, w.startWheelAngle.z);
 
+            CalculateMotorForce(w.col, accel, steer);  //6 
         }
 
 
-        leftTrackTextureOffset = Mathf.Repeat(leftTrackTextureOffset + delta * trackRpm * trackTextureSpeed / 60.0f, 1.0f); //9 
-        leftTrack.GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, -leftTrackTextureOffset)); //10 
+        leftTrackTextureOffset = Mathf.Repeat(leftTrackTextureOffset + delta * trackRpm * trackTextureSpeed / 60.0f, 1.0f);
+        leftTrack.GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, -leftTrackTextureOffset));
 
-        trackRpm = CalculateSmoothRpm(rightTrackWheelData);  //3 
+        trackRpm = CalculateSmoothRpm(rightTrackWheelData);
 
         foreach (WheelData w in rightTrackWheelData)
-        {  //4   
-            w.wheelTransform.localPosition = CalculateWheelPosition(w.wheelTransform, w.col, w.wheelStartPos); //5 
-            w.boneTransform.localPosition = CalculateWheelPosition(w.boneTransform, w.col, w.boneStartPos); //6 
+        {
+            w.wheelTransform.localPosition = CalculateWheelPosition(w.wheelTransform, w.col, w.wheelStartPos);
+            w.boneTransform.localPosition = CalculateWheelPosition(w.boneTransform, w.col, w.boneStartPos);
 
-            w.rotation = Mathf.Repeat(w.rotation + delta * trackRpm * 360.0f / 60.0f, 360.0f);  //7 
-            w.wheelTransform.localRotation = Quaternion.Euler(w.rotation, w.startWheelAngle.y, w.startWheelAngle.z);  //8 
+            w.rotation = Mathf.Repeat(w.rotation + delta * trackRpm * 360.0f / 60.0f, 360.0f);
+            w.wheelTransform.localRotation = Quaternion.Euler(w.rotation, w.startWheelAngle.y, w.startWheelAngle.z);
 
-
+            CalculateMotorForce(w.col, accel, -steer); //6 
         }
 
-        rightTrackTextureOffset = Mathf.Repeat(rightTrackTextureOffset + delta * trackRpm * trackTextureSpeed / 60.0f, 1.0f);  ///9 
-        rightTrack.GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, -rightTrackTextureOffset));  //10 
+        rightTrackTextureOffset = Mathf.Repeat(rightTrackTextureOffset + delta * trackRpm * trackTextureSpeed / 60.0f, 1.0f);
+        rightTrack.GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, -rightTrackTextureOffset));
 
         for (int i = 0; i < leftTrackUpperWheels.Length; i++)
-        {  //11 
-            leftTrackUpperWheels[i].localRotation = Quaternion.Euler(leftTrackWheelData[0].rotation, leftTrackWheelData[0].startWheelAngle.y, leftTrackWheelData[0].startWheelAngle.z);  //11 
+        {
+            leftTrackUpperWheels[i].localRotation = Quaternion.Euler(leftTrackWheelData[0].rotation, leftTrackWheelData[0].startWheelAngle.y, leftTrackWheelData[0].startWheelAngle.z);
         }
 
         for (int i = 0; i < rightTrackUpperWheels.Length; i++)
-        {  //11 
-            rightTrackUpperWheels[i].localRotation = Quaternion.Euler(rightTrackWheelData[0].rotation, rightTrackWheelData[0].startWheelAngle.y, rightTrackWheelData[0].startWheelAngle.z);  //11 
+        {
+            rightTrackUpperWheels[i].localRotation = Quaternion.Euler(rightTrackWheelData[0].rotation, rightTrackWheelData[0].startWheelAngle.y, rightTrackWheelData[0].startWheelAngle.z);
         }
     }
 
+    public float forwardTorque = 500.0f; //1
+    public float rotateOnMoveBrakeTorque = 400.0f; //2 
+    public float minBrakeTorque = 0.0f; //3 
+    public float minOnStayStiffness = 0.06f; //4 
+    public float minOnMoveStiffness = 0.05f;  //5 
+    public float rotateOnMoveMultiply = 2.0f; //6
+
+    public void CalculateMotorForce(WheelCollider col, float accel, float steer)
+    {
+        WheelFrictionCurve fc = col.sidewaysFriction;  //7 
+
+        if (accel == 0 && steer == 0)
+        {
+            col.brakeTorque = maxBrakeTorque;
+        }
+        else if (accel == 0.0f)
+        {
+            col.brakeTorque = rotateOnStandBrakeTorque;
+            col.motorTorque = steer * rotateOnStandTorque;
+            fc.stiffness = 1.0f + minOnStayStiffness - Mathf.Abs(steer);
+
+        }
+        else
+        { //8 
+
+            col.brakeTorque = minBrakeTorque;  //9 
+            col.motorTorque = accel * forwardTorque;  //10 
+
+            if (steer < 0)
+            { //11 
+                col.brakeTorque = rotateOnMoveBrakeTorque; //12 
+                col.motorTorque = steer * forwardTorque * rotateOnMoveMultiply;//13 
+                fc.stiffness = 1.0f + minOnMoveStiffness - Mathf.Abs(steer);  //14 
+            }
+
+            if (steer > 0)
+            { //15 
+
+                col.motorTorque = steer * forwardTorque * rotateOnMoveMultiply;//16 
+                fc.stiffness = 1.0f + minOnMoveStiffness - Mathf.Abs(steer); //17
+            }
+
+
+        }
+
+        if (fc.stiffness > 1.0f) fc.stiffness = 1.0f; //18		 
+        col.sidewaysFriction = fc; //19
+
+        if (col.rpm > 0 && accel < 0)
+        { //20 
+            col.brakeTorque = maxBrakeTorque;  //21
+        }
+        else if (col.rpm < 0 && accel > 0)
+        { //22 
+            col.brakeTorque = maxBrakeTorque; //23
+        }
+    }
 
     private float CalculateSmoothRpm(WheelData[] w)
     { //12 

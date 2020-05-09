@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelCollider: {fileID: 8765691786041385315}
-  wheelRadius: 0.15
+  wheelRadius: 0.42
   suspensionOffset: 0.05
-  trackTextureSpeed: 2.5
+  trackTextureSpeed: 5
   leftTrack: {fileID: 5110381841077425654}
   leftTrackUpperWheels:
   - {fileID: 5110381841077062106}
