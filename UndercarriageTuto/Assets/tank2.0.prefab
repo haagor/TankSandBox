@@ -44,7 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelCollider: {fileID: 8765691786041385315}
   wheelRadius: 0.42
-  suspensionOffset: 0.05
+  suspensionOffset: 0.4
   trackTextureSpeed: 5
   leftTrack: {fileID: 5110381841077425654}
   leftTrackUpperWheels:
@@ -86,15 +86,15 @@ MonoBehaviour:
   - {fileID: 5110381841077062058}
   - {fileID: 5110381841077062062}
   - {fileID: 5110381841077062098}
-  rotateOnStandTorque: 15000
-  rotateOnStandBrakeTorque: 5000
-  maxBrakeTorque: 10000
-  forwardTorque: 5000
-  rotateOnMoveBrakeTorque: 4000
+  rotateOnStandTorque: 2500
+  rotateOnStandBrakeTorque: 1000
+  maxBrakeTorque: 600
+  forwardTorque: 10000
+  rotateOnMoveBrakeTorque: 5000
   minBrakeTorque: 0
   minOnStayStiffness: 0.06
   minOnMoveStiffness: 0.05
-  rotateOnMoveMultiply: 2
+  rotateOnMoveMultiply: 1
 --- !u!1 &6584070194926872301
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,26 +165,26 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8765691786041385315}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.31
+  m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 100000
-    damper: 50
-    targetPosition: 0
-  m_SuspensionDistance: 0.15
-  m_ForceAppPointDistance: 0
-  m_Mass: 40
+    spring: 35000
+    damper: 4500
+    targetPosition: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0.3
+  m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 1
-    m_ExtremumValue: 20000
-    m_AsymptoteSlip: 2
-    m_AsymptoteValue: 10000
+    m_ExtremumSlip: 0.4
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.8
+    m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 1
-    m_ExtremumValue: 20000
-    m_AsymptoteSlip: 2
-    m_AsymptoteValue: 10000
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.5
+    m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1001 &5110381841077457682

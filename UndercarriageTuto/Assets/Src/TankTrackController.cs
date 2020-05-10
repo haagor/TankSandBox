@@ -161,7 +161,7 @@ public class TankTrackController : MonoBehaviour
     public float minBrakeTorque = 0.0f; //3 
     public float minOnStayStiffness = 0.06f; //4 
     public float minOnMoveStiffness = 0.05f;  //5 
-    public float rotateOnMoveMultiply = 2.0f; //6
+    public float rotateOnMoveMultiply = 1.0f; //6
 
     public void CalculateMotorForce(WheelCollider col, float accel, float steer)
     {
