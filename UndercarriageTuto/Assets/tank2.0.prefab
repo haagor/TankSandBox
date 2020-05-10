@@ -86,6 +86,15 @@ MonoBehaviour:
   - {fileID: 5110381841077062058}
   - {fileID: 5110381841077062062}
   - {fileID: 5110381841077062098}
+  rotateOnStandTorque: 15000
+  rotateOnStandBrakeTorque: 5000
+  maxBrakeTorque: 10000
+  forwardTorque: 5000
+  rotateOnMoveBrakeTorque: 4000
+  minBrakeTorque: 0
+  minOnStayStiffness: 0.06
+  minOnMoveStiffness: 0.05
+  rotateOnMoveMultiply: 2
 --- !u!1 &6584070194926872301
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +123,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5110381841077062096}
-  - {fileID: 4360176019085475542}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,8 +154,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4855829081849469551}
-  m_RootOrder: 1
+  m_Father: {fileID: 5110381841077062096}
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &2940421335201005420
 WheelCollider:
@@ -159,7 +167,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.31
   m_SuspensionSpring:
-    spring: 100
+    spring: 100000
     damper: 50
     targetPosition: 0
   m_SuspensionDistance: 0.15

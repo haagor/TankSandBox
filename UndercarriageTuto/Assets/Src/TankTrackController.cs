@@ -54,7 +54,7 @@ public class TankTrackController : MonoBehaviour
         {
             rightTrackWheelData[i] = SetupWheels(rightTrackWheels[i], rightTrackBones[i]); //2  
         }
-
+        Destroy(wheelCollider);
         Vector3 offset = transform.position; //3 
         offset.z += 0.01f;  //3 
         transform.position = offset; //3		 
