@@ -843,15 +843,15 @@ MonoBehaviour:
   - {fileID: 6370532521490919517}
   - {fileID: 6370532521490919513}
   - {fileID: 6370532521490919461}
-  rotateOnStandTorque: 2500
-  rotateOnStandBrakeTorque: 1000
-  maxBrakeTorque: 600
-  forwardTorque: 10000
-  rotateOnMoveBrakeTorque: 5000
+  rotateOnStandTorque: 10000
+  rotateOnStandBrakeTorque: 100
+  maxBrakeTorque: 100
+  forwardTorque: 5000
+  rotateOnMoveBrakeTorque: 100
   minBrakeTorque: 0
   minOnStayStiffness: 0.06
   minOnMoveStiffness: 0.05
-  rotateOnMoveMultiply: 1
+  rotateOnMoveMultiply: 0.5
 --- !u!64 &7286004650734929535
 MeshCollider:
   m_ObjectHideFlags: 0
