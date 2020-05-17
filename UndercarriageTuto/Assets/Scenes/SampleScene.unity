@@ -1043,6 +1043,20 @@ MonoBehaviour:
   m_Shell: {fileID: 54651680707906948, guid: 4eb248c1a81c6d540b63db26e3bbd56f, type: 3}
   m_FireTransform: {fileID: 496473903}
   m_LaunchForce: 1000
+--- !u!114 &1346157451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346157446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650d450ec67efef4fb9a4faf5a1990cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tank: {fileID: 1346157446}
+  sensitivity: 1
 --- !u!4 &1470149110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6501416643086163159, guid: 771738b53df2e3e4292f472fb3506d4a,
