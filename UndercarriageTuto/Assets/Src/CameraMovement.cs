@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public GameObject turret_pivot;
+    public GameObject canon_pivot;
     public float sensitivity;
 
     void FixedUpdate()
@@ -13,6 +14,13 @@ public class CameraMovement : MonoBehaviour
         turret_pivot.transform.Rotate(
             0,
             rotateHorizontal * sensitivity,
+            0);
+
+        float rotateVertical = Input.GetAxis("Mouse Y");
+        rotateVertical = Mathf.Clamp(rotateVertical, 70, 100);
+        canon_pivot.transform.Rotate(
+            0,
+            rotateVertical * sensitivity,
             0);
     }
 }
