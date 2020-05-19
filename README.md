@@ -32,6 +32,16 @@ Next I follow this tutorial [https://habr.com/en/post/116088/] to deep dive to o
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/CaptureTrack1.PNG)
 
+Once this tutorial done, I find my tracks satisfying. There is others methods to simulate tracks but this is ok for now. Later I probably update tracks with some capsule collider like in this example [https://www.youtube.com/watch?v=HSdKs4ZGDKo]
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/capsuleCollider1.PNG)
+
+Time to work on the rest of the tank : the turret. I make it with some simple geometric. I color the rotate points with red. Write some scripts. Another script to shoot shell. With all of that I obtain something seem like a tank.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/CaptureTank1.PNG)
+
+I don't want to forget things like sound or 2D FX and it will be my next steps.
+
 ---
 
 Simon P
