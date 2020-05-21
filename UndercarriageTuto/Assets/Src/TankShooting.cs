@@ -8,6 +8,7 @@ public class TankShooting : MonoBehaviour
     public Transform m_FireTransform;           // A child of the tank where the shells are spawned.
     public float m_LaunchForce = 30f;           // The force given to the shell if the fire button is not held.
     public Rigidbody hull;
+    public AudioSource shot;
 
 
     private void Start()
@@ -38,6 +39,7 @@ public class TankShooting : MonoBehaviour
 
     private void FireForce()
     {
+        shot.Play();
         hull.AddForce(m_FireTransform.forward * (-3000000));
     }
 }
