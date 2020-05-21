@@ -1,48 +1,62 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TankShooting : MonoBehaviour
 {
-    public int m_PlayerNumber = 1;              // Used to identify the different players.
-    public Rigidbody m_Shell;                   // Prefab of the shell.
-    public Transform m_FireTransform;           // A child of the tank where the shells are spawned.
-    public float m_LaunchForce = 30f;           // The force given to the shell if the fire button is not held.
+    public Rigidbody shell;
+    public Transform fireTransform;
+    public float launchForce = 1000f;
     public Rigidbody hull;
     public AudioSource shot;
     public ParticleSystem burst;
+    public ReloadBar reloadBar;
 
+    private bool reload;
+    private float startingTimeReload;
 
     private void Start()
     {
-        // The fire axis is based on the player number.
+        reload = false;
+        reloadBar.SetMaxReload(300);
+        reloadBar.SetReloadLevel(0);
     }
 
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !reload)
         {
             Fire();
             Explode();
             FireForce();
         }
+        if (reload)
+        {
+            if (Time.time - startingTimeReload > 3)
+            {
+                reload = false;
+            }
+            reloadBar.SetReloadLevel(Convert.ToInt32((Time.time - startingTimeReload) * 100));
+        } 
     }
-
 
     private void Fire()
     {
-        // Create an instance of the shell and store a reference to it's rigidbody.
         Rigidbody shellInstance =
-            Instantiate(m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+            Instantiate(shell, fireTransform.position, fireTransform.rotation) as Rigidbody;
 
-        // Set the shell's velocity to the launch force in the fire position's forward direction.
-        shellInstance.velocity = m_LaunchForce * m_FireTransform.forward;
+        shellInstance.velocity = launchForce * fireTransform.forward;
+
+        reload = true;
+        startingTimeReload = Time.time;
+        reloadBar.SetReloadLevel(300);
     }
 
     private void FireForce()
     {
         shot.Play();
-        hull.AddForce(m_FireTransform.forward * (-3000000));
+        hull.AddForce(fireTransform.forward * (-3000000));
     }
 
     void Explode()

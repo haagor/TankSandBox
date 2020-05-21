@@ -20,7 +20,6 @@ public class CameraMovement : MonoBehaviour
 
         float rotateVertical = Input.GetAxis("Mouse Y");
         canon_pivot_rotation += Input.GetAxis("Mouse Y") * sensitivity;
-        Debug.Log(canon_pivot_rotation);
         if (canon_pivot_rotation < 30 && canon_pivot_rotation > -20)
         {
             canon_pivot.transform.Rotate(
