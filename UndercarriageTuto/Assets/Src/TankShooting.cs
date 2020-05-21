@@ -9,6 +9,7 @@ public class TankShooting : MonoBehaviour
     public float m_LaunchForce = 30f;           // The force given to the shell if the fire button is not held.
     public Rigidbody hull;
     public AudioSource shot;
+    public ParticleSystem burst;
 
 
     private void Start()
@@ -22,6 +23,7 @@ public class TankShooting : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
+            Explode();
             FireForce();
         }
     }
@@ -41,5 +43,10 @@ public class TankShooting : MonoBehaviour
     {
         shot.Play();
         hull.AddForce(m_FireTransform.forward * (-3000000));
+    }
+
+    void Explode()
+    {
+        burst.Play();
     }
 }
