@@ -7,6 +7,7 @@ public class TankShooting : MonoBehaviour
     public Rigidbody m_Shell;                   // Prefab of the shell.
     public Transform m_FireTransform;           // A child of the tank where the shells are spawned.
     public float m_LaunchForce = 30f;           // The force given to the shell if the fire button is not held.
+    public Rigidbody hull;
 
 
     private void Start()
@@ -20,6 +21,7 @@ public class TankShooting : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
+            FireForce();
         }
     }
 
@@ -32,5 +34,10 @@ public class TankShooting : MonoBehaviour
 
         // Set the shell's velocity to the launch force in the fire position's forward direction.
         shellInstance.velocity = m_LaunchForce * m_FireTransform.forward;
+    }
+
+    private void FireForce()
+    {
+        hull.AddForce(m_FireTransform.forward * (-3000000));
     }
 }

@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8301268247896658980}
   m_Layer: 0
-  m_Name: pivot_canon
+  m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1106,6 +1106,13 @@ MonoBehaviour:
   m_Shell: {fileID: 54651680707906948, guid: 4eb248c1a81c6d540b63db26e3bbd56f, type: 3}
   m_FireTransform: {fileID: 384555737}
   m_LaunchForce: 1000
+  hull: {fileID: 1346157450}
+--- !u!54 &1346157450 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3272982244070960208, guid: 750d827ec16a8b741b48ff3a04b8f471,
+    type: 3}
+  m_PrefabInstance: {fileID: 177876620}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1346157451
 MonoBehaviour:
   m_ObjectHideFlags: 0
