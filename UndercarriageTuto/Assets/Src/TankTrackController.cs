@@ -22,6 +22,10 @@ public class TankTrackController : MonoBehaviour
     public Transform[] rightTrackWheels; //8
     public Transform[] rightTrackBones; //9
 
+    public AudioSource track;
+    public Engine engine;
+    public EngineHUD engineHUD;
+
     public class WheelData
     { //10
         public Transform wheelTransform; //11
@@ -41,7 +45,6 @@ public class TankTrackController : MonoBehaviour
 
     void Awake()
     {
-
         leftTrackWheelData = new WheelData[leftTrackWheels.Length]; //1 
         rightTrackWheelData = new WheelData[rightTrackWheels.Length]; //1 
 
@@ -57,8 +60,7 @@ public class TankTrackController : MonoBehaviour
         Destroy(wheelCollider);
         Vector3 offset = transform.position; //3 
         offset.z += 0.01f;  //3 
-        transform.position = offset; //3		 
-
+        transform.position = offset; //3
     }
 
 
@@ -98,13 +100,33 @@ public class TankTrackController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float accelerate = 0;
-        float steer = 0;
+        engine.CheckActionEngine(engineHUD);
+        if (engine.IsEngineOn())
+        {
+            float accelerate = 0;
+            float steer = 0;
 
-        accelerate = Input.GetAxis("Vertical");  //4
-        steer = Input.GetAxis("Horizontal"); //4
+            accelerate = Input.GetAxis("Vertical");  //4
+            steer = Input.GetAxis("Horizontal"); //4
 
-        UpdateWheels(accelerate, steer); //5 
+            WheelsSound(accelerate, steer);
+            UpdateWheels(accelerate, steer); //5 
+        }
+    }
+
+    public void WheelsSound(float accelerate, float steer)
+    {
+        if (accelerate != 0 | steer != 0)
+        {
+            if (!track.isPlaying)
+            {
+                track.Play();
+            }
+        }
+        else
+        {
+            track.Stop();
+        }
     }
 
 
