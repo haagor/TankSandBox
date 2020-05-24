@@ -24,7 +24,13 @@ Hell let loose is my first experience with tank multiplayer. The crew is  compos
 
 I star with a simple terrain look like cubic desert and a nice small tank. I put some colliders, write a script to move the tank, add engine sound...
 
-It's a cool start, but I want a better tank simulation. I discover then the WheelCollider. Next I explore the different strategies to simulate tank tracks. It's seem clear at this step that I have to focus on specifics things for learn and stop to rush a nice result. So I start to experiment the WheelCollider.
+It's seem clear at this step that I have to focus on specifics things for learn and stop to rush a nice result. So I deep dive in WheelCollider and mobility aspect, sound aspect, FX 2D, shell shot and collider, turret features and control command. I started to explain chronologically my work but at a moment it seemed more pertinent to split my work in chapter.
+
+### Mobility
+
+---
+
+It was a cool start, but I want a better tank simulation. I discover then the WheelCollider. Next I explore the different strategies to simulate tank tracks
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/CaptureWheelCollider2.PNG)
 
@@ -36,11 +42,37 @@ Once this tutorial done, I find my tracks satisfying. There is others methods to
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/capsuleCollider1.PNG)
 
-Time to work on the rest of the tank : the turret. I make it with some simple geometric. I color the rotate points with red. Write some scripts. Another script to shoot shell. With all of that I obtain something seem like a tank.
+### Turret
 
-![](https://github.com/haagor/TankSandBox/blob/master/img/CaptureTank1.PNG)
+---
 
-I don't want to forget things like sound or 2D FX and it will be my next steps.
+Time to work on the rest of the tank : the turret. I make it with some simple geometric. I color the rotate points with red. Write some scripts to use mouse input to rotate turret and camera but also the canon. With all of that I obtain something seem like a tank.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/turret1.PNG)
+
+### Shell shot and physics
+
+---
+
+I drawn simple shell and write a script to shoot it on mouse click. I shot everywhere and I filled out my map with shells, really funny. I add inverse force on shot. I want also a reload timer and that trigger the creation of HUD.
+
+### HUD
+
+---
+
+I discovered sprites and make my first slider to visualise my reload. I also want to power on my tank  so I add a indicator for that.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/hud1.PNG)
+
+### Sound
+
+---
+
+I add rapidly a shot sound. With the inverse force on shot, that created a good sensation on shot. I also trigger a sound for the engine and wheel movement.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/tank1.PNG)
+
+
 
 ---
 

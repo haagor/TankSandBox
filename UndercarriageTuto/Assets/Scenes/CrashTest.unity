@@ -6709,7 +6709,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b345dfc4a76201b4ca717899bde4f23c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12416,12 +12416,12 @@ PrefabInstance:
     - target: {fileID: 1376848277194164146, guid: 750d827ec16a8b741b48ff3a04b8f471,
         type: 3}
       propertyPath: maxBrakeTorque
-      value: 600
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1376848277194164146, guid: 750d827ec16a8b741b48ff3a04b8f471,
         type: 3}
       propertyPath: rotateOnStandTorque
-      value: 1000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 1376848277194164146, guid: 750d827ec16a8b741b48ff3a04b8f471,
         type: 3}
@@ -12438,6 +12438,36 @@ PrefabInstance:
       propertyPath: engine
       value: 
       objectReference: {fileID: 1020010425}
+    - target: {fileID: 1376848277194164146, guid: 750d827ec16a8b741b48ff3a04b8f471,
+        type: 3}
+      propertyPath: rotateOnStandBrakeTorque
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376848277194164146, guid: 750d827ec16a8b741b48ff3a04b8f471,
+        type: 3}
+      propertyPath: forwardTorque
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376848277194164146, guid: 750d827ec16a8b741b48ff3a04b8f471,
+        type: 3}
+      propertyPath: rotateOnMoveMultiply
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376848277194164146, guid: 750d827ec16a8b741b48ff3a04b8f471,
+        type: 3}
+      propertyPath: minOnStayStiffness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376848277194164146, guid: 750d827ec16a8b741b48ff3a04b8f471,
+        type: 3}
+      propertyPath: minOnMoveStiffness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272982244070960208, guid: 750d827ec16a8b741b48ff3a04b8f471,
+        type: 3}
+      propertyPath: m_Mass
+      value: 40000
+      objectReference: {fileID: 0}
     - target: {fileID: 3597291024822253337, guid: 750d827ec16a8b741b48ff3a04b8f471,
         type: 3}
       propertyPath: m_Name
@@ -12502,6 +12532,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828384728334547098, guid: 750d827ec16a8b741b48ff3a04b8f471,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828384728334547098, guid: 750d827ec16a8b741b48ff3a04b8f471,
+        type: 3}
+      propertyPath: m_ForwardFriction.m_Stiffness
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8013286002827570981, guid: 750d827ec16a8b741b48ff3a04b8f471,
         type: 3}
