@@ -101,17 +101,15 @@ public class TankTrackController : MonoBehaviour
     void FixedUpdate()
     {
         engine.CheckActionEngine(engineHUD);
+        float accelerate = 0;
+        float steer = 0;
         if (engine.IsEngineOn())
         {
-            float accelerate = 0;
-            float steer = 0;
-
             accelerate = Input.GetAxis("Vertical");  //4
             steer = Input.GetAxis("Horizontal"); //4
-
-            WheelsSound(accelerate, steer);
-            UpdateWheels(accelerate, steer); //5 
         }
+        WheelsSound(accelerate, steer);
+        UpdateWheels(accelerate, steer); //5 
     }
 
     public void WheelsSound(float accelerate, float steer)
