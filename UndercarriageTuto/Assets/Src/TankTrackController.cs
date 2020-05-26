@@ -133,7 +133,6 @@ public class TankTrackController : MonoBehaviour
         float delta = Time.fixedDeltaTime;
 
         float trackRpm = CalculateSmoothRpm(leftTrackWheelData);
-
         foreach (WheelData w in leftTrackWheelData)
         {
             w.wheelTransform.localPosition = CalculateWheelPosition(w.wheelTransform, w.col, w.wheelStartPos);
@@ -144,13 +143,10 @@ public class TankTrackController : MonoBehaviour
 
             CalculateMotorForce(w.col, accel, steer);  //6 
         }
-
-
         leftTrackTextureOffset = Mathf.Repeat(leftTrackTextureOffset + delta * trackRpm * trackTextureSpeed / 60.0f, 1.0f);
         leftTrack.GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, -leftTrackTextureOffset));
 
         trackRpm = CalculateSmoothRpm(rightTrackWheelData);
-
         foreach (WheelData w in rightTrackWheelData)
         {
             w.wheelTransform.localPosition = CalculateWheelPosition(w.wheelTransform, w.col, w.wheelStartPos);
@@ -161,7 +157,6 @@ public class TankTrackController : MonoBehaviour
 
             CalculateMotorForce(w.col, accel, -steer); //6 
         }
-
         rightTrackTextureOffset = Mathf.Repeat(rightTrackTextureOffset + delta * trackRpm * trackTextureSpeed / 60.0f, 1.0f);
         rightTrack.GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, -rightTrackTextureOffset));
 
@@ -177,52 +172,32 @@ public class TankTrackController : MonoBehaviour
     }
 
     public float forwardTorque = 500.0f; //1
-    public float rotateOnMoveBrakeTorque = 400.0f; //2 
-    public float minBrakeTorque = 0.0f; //3 
-    public float minOnStayStiffness = 0.06f; //4 
-    public float minOnMoveStiffness = 0.05f;  //5 
     public float rotateOnMoveMultiply = 1.0f; //6
 
     public void CalculateMotorForce(WheelCollider col, float accel, float steer)
     {
-        WheelFrictionCurve fc = col.sidewaysFriction;  //7 
 
-        if (accel == 0 && steer == 0)
+        if (accel == 0.0f)
         {
-            col.brakeTorque = maxBrakeTorque;
-        }
-        else if (accel == 0.0f)
-        {
-            col.brakeTorque = rotateOnStandBrakeTorque;
+            col.brakeTorque = 1;
             col.motorTorque = steer * rotateOnStandTorque;
-            fc.stiffness = 1.0f + minOnStayStiffness - Mathf.Abs(steer);
-
         }
         else
-        { //8 
-
-            col.brakeTorque = minBrakeTorque;  //9 
+        {
+            col.brakeTorque = 0;
             col.motorTorque = accel * forwardTorque;  //10 
 
             if (steer < 0)
             { //11 
-                col.brakeTorque = rotateOnMoveBrakeTorque; //12 
                 col.motorTorque = steer * forwardTorque * rotateOnMoveMultiply;//13 
-                fc.stiffness = 1.0f + minOnMoveStiffness - Mathf.Abs(steer);  //14 
             }
 
             if (steer > 0)
             { //15 
-
                 col.motorTorque = steer * forwardTorque * rotateOnMoveMultiply;//16 
-                fc.stiffness = 1.0f + minOnMoveStiffness - Mathf.Abs(steer); //17
             }
-
-
         }
 
-        if (fc.stiffness > 1.0f) fc.stiffness = 1.0f; //18		 
-        col.sidewaysFriction = fc; //19
 
         if (col.rpm > 0 && accel < 0)
         { //20 
@@ -269,7 +244,7 @@ public class TankTrackController : MonoBehaviour
             rpm /= grWheelsInd.Count; //16 
         }
 
-        return rpm; //17 
+        return rpm;
     }
 
 
@@ -290,6 +265,20 @@ public class TankTrackController : MonoBehaviour
         }
 
         return lp;
+    }
+
+    private void LimitRPM()
+    {
+        foreach (WheelData w in leftTrackWheelData)
+        {
+            if (w.col.rpm > 100) {
+
+            }
+        }
+        foreach (WheelData w in rightTrackWheelData)
+        {
+
+        }
     }
 
 }
