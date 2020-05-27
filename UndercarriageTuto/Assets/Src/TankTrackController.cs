@@ -158,11 +158,11 @@ public class TankTrackController : MonoBehaviour {
             col.motorTorque = accel * 5000f;
 
             if (steer < 0) {
-                col.motorTorque = steer * 10000f;
+                col.motorTorque = steer * 5000f;
             }
 
             if (steer > 0) {
-                col.motorTorque = steer * 10000f;
+                col.motorTorque = steer * 5000f;
             }
         }
 
