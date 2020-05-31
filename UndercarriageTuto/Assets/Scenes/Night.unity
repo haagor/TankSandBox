@@ -7019,7 +7019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shell: {fileID: 194468280724387706, guid: 00a78a4c799a5194bae12b8ae3280834, type: 3}
   fireTransform: {fileID: 1216447633}
-  launchForce: 1000
+  launchForce: 3000
   hull: {fileID: 1024579894}
   shot: {fileID: 1024579898}
   burst: {fileID: 267013384}
