@@ -72,6 +72,18 @@ I add rapidly a shot sound. With the inverse force on shot, that created a good 
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/tank1.PNG)
 
+### Light
+
+---
+
+I want to discover a little bit what is possible with light. I add headlights and try the "spot light". More important, I want a trail effect on the shell.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/shellTrail1.PNG)
+
+With the "trail renderer" component and the light apply on shader it is really easy to have a first version of this effect. But like other part I want deepen later.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/fusionShell1.PNG)
+
 
 
 ---
