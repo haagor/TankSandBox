@@ -86,15 +86,9 @@ MonoBehaviour:
   - {fileID: 5110381841077062058}
   - {fileID: 5110381841077062062}
   - {fileID: 5110381841077062098}
-  rotateOnStandTorque: 2500
-  rotateOnStandBrakeTorque: 1000
-  maxBrakeTorque: 600
-  forwardTorque: 10000
-  rotateOnMoveBrakeTorque: 5000
-  minBrakeTorque: 0
-  minOnStayStiffness: 0.06
-  minOnMoveStiffness: 0.05
-  rotateOnMoveMultiply: 1
+  track: {fileID: 0}
+  engine: {fileID: 0}
+  engineHUD: {fileID: 0}
 --- !u!1 &6584070194926872301
 GameObject:
   m_ObjectHideFlags: 0
