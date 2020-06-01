@@ -1,66 +1,43 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-public class TankShooting : MonoBehaviour
+[System.Serializable]
+public class Track
 {
-    public Rigidbody shell;
-    public Transform fireTransform;
-    public float launchForce = 1000f;
-    public Rigidbody hull;
-    public AudioSource shot;
-    public ParticleSystem burst;
-    public ReloadBar reloadBar;
+    public List<WheelCollider> colliders;
+}
 
-    private bool reload;
-    private float startingTimeReload;
+public class TankMovementTwoCommand : MonoBehaviour
+{
+    public Track trackLeft;
+    public Track trackRight;
+    public float maxMotorTorque;
 
-    private void Start()
+    public void FixedUpdate()
     {
-        reload = false;
-        reloadBar.SetMaxReload(300);
-        reloadBar.SetReloadLevel(0);
-    }
+        float motor = maxMotorTorque * Input.GetAxis("Vertical");
 
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && !reload)
+        foreach (WheelCollider wc in trackLeft.colliders)
         {
-            Fire();
-            Explode();
-            FireForce();
+            wc.motorTorque = motor;
+            ApplyLocalPositionToVisuals(wc);
         }
-        if (reload)
+        foreach (WheelCollider wc in trackRight.colliders)
         {
-            if (Time.time - startingTimeReload > 3)
-            {
-                reload = false;
-            }
-            reloadBar.SetReloadLevel(Convert.ToInt32((Time.time - startingTimeReload) * 100));
-        } 
+            wc.motorTorque = motor;
+            ApplyLocalPositionToVisuals(wc);
+        }
     }
 
-    private void Fire()
+    public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
-        Rigidbody shellInstance =
-            Instantiate(shell, fireTransform.position, fireTransform.rotation) as Rigidbody;
+        Transform visualWheel = collider.transform.GetChild(0);
 
-        shellInstance.velocity = launchForce * fireTransform.forward;
+        Vector3 position;
+        Quaternion rotation;
+        collider.GetWorldPose(out position, out rotation);
 
-        reload = true;
-        startingTimeReload = Time.time;
-        reloadBar.SetReloadLevel(300);
-    }
-
-    private void FireForce()
-    {
-        shot.Play();
-        hull.AddForce(fireTransform.forward * (-3000000));
-    }
-
-    void Explode()
-    {
-        burst.Play();
+        visualWheel.transform.position = position;
     }
 }
