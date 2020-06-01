@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6802175851714167306}
   m_Layer: 0
-  m_Name: GreenTank
+  m_Name: GreenTank2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
