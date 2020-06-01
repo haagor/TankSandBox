@@ -1,18 +1,44 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class TankMovement2wommand : MonoBehaviour
+[System.Serializable]
+public class Track
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<WheelCollider> colliders;
+}
+
+public class TankMovementTwoCommand : MonoBehaviour
+{
+    public Track trackLeft;
+    public Track trackRight;
+    public float maxMotorTorque;
+
+    public void FixedUpdate()
     {
-        
+        float motorLeft = maxMotorTorque * Input.GetAxis("TrackLeft");
+        foreach (WheelCollider wc in trackLeft.colliders)
+        {
+            wc.motorTorque = motorLeft;
+            ApplyLocalPositionToVisuals(wc);
+        }
+
+        float motorRight = maxMotorTorque * Input.GetAxis("TrackRight");
+        foreach (WheelCollider wc in trackRight.colliders)
+        {
+            wc.motorTorque = motorRight;
+            ApplyLocalPositionToVisuals(wc);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
-        
+        Transform visualWheel = collider.transform.GetChild(0);
+
+        Vector3 position;
+        Quaternion rotation;
+        collider.GetWorldPose(out position, out rotation);
+
+        visualWheel.transform.position = position;
     }
 }
