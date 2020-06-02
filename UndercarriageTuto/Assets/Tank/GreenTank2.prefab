@@ -131,7 +131,7 @@ MonoBehaviour:
     - {fileID: 6632178227042151665}
     - {fileID: 5323538494163178284}
     - {fileID: 1633421054279494837}
-  maxMotorTorque: 500
+  maxMotorTorque: 400
 --- !u!1 &8036884579101202930
 GameObject:
   m_ObjectHideFlags: 0

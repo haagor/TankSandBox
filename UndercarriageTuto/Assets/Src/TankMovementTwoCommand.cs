@@ -41,10 +41,10 @@ public class TankMovementTwoCommand : MonoBehaviour
         Vector3 position;
         Quaternion rotation;
         collider.GetWorldPose(out position, out rotation);
-        rpm = Mathf.Repeat(visualWheel.rotation.y + delta * rpm * 360.0f / 60.0f, 360.0f);
 
         visualWheel.transform.position = position;
-        visualWheel.transform.localRotation = Quaternion.Euler(rpm, 0.0f, 0.0f);
+        float x = Mathf.Repeat(visualWheel.transform.rotation.y + delta * rpm * 360.0f / 60.0f, 360.0f);
+        visualWheel.transform.Rotate(new Vector3(x, 0.0f, 0.0f), Space.Self);
     }
 
     public float WheelTrackAlignment(Track track) {
