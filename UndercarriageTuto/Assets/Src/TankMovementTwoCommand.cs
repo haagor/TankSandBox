@@ -44,7 +44,7 @@ public class TankMovementTwoCommand : MonoBehaviour
         rpm = Mathf.Repeat(visualWheel.rotation.y + delta * rpm * 360.0f / 60.0f, 360.0f);
 
         visualWheel.transform.position = position;
-        visualWheel.transform.localRotation = Quaternion.Euler(rpm, 0, 0);
+        visualWheel.transform.localRotation = Quaternion.Euler(rpm, 0.0f, 0.0f);
     }
 
     public float WheelTrackAlignment(Track track) {
@@ -56,6 +56,13 @@ public class TankMovementTwoCommand : MonoBehaviour
                 length += 1;
             }
         }
+        if (length == 0) {
+            foreach (WheelCollider wc in track.colliders) {
+                rpm += wc.rpm;
+                length += 1;
+            }
+        }
+
         rpm /= length;
         return rpm;
     }
