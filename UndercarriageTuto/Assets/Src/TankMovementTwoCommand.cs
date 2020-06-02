@@ -40,5 +40,6 @@ public class TankMovementTwoCommand : MonoBehaviour
         collider.GetWorldPose(out position, out rotation);
 
         visualWheel.transform.position = position;
+        visualWheel.transform.rotation = rotation;
     }
 }
