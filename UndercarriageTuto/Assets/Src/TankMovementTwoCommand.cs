@@ -16,8 +16,13 @@ public class TankMovementTwoCommand : MonoBehaviour
 
     public void FixedUpdate()
     {
-        float motorLeft = maxMotorTorque * Input.GetAxis("TrackLeft");
         float delta = Time.fixedDeltaTime;
+
+        float inputTrackLeft = Input.GetAxis("TrackLeft");
+        float inputTrackRight = Input.GetAxis("TrackRight");
+        //ApplyForwardFriction(trackLeft, trackRight, inputTrackLeft, inputTrackRight);
+
+        float motorLeft = maxMotorTorque * inputTrackLeft;
         float rpmLeft = WheelTrackAlignment(trackLeft);
         foreach (WheelCollider wc in trackLeft.colliders)
         {
@@ -25,7 +30,7 @@ public class TankMovementTwoCommand : MonoBehaviour
             ApplyLocalPositionToVisuals(wc, rpmLeft, delta);
         }
 
-        float motorRight = maxMotorTorque * Input.GetAxis("TrackRight");
+        float motorRight = maxMotorTorque * inputTrackRight;
         float rpmRight = WheelTrackAlignment(trackRight);
         foreach (WheelCollider wc in trackRight.colliders)
         {
@@ -65,5 +70,20 @@ public class TankMovementTwoCommand : MonoBehaviour
 
         rpm /= length;
         return rpm;
+    }
+
+    public void ApplyForwardFriction(Track trackLeft, Track trackRight, float inputTrackLeft, float inputTrackRight) {
+        if (inputTrackLeft == 0.0f & inputTrackRight == 0.0f) {
+            foreach (WheelCollider wc in trackLeft.colliders) {
+                WheelFrictionCurve fc = wc.forwardFriction;
+                fc.stiffness = 10;
+                wc.forwardFriction = fc;
+            }
+            foreach (WheelCollider wc in trackRight.colliders) {
+                WheelFrictionCurve fc = wc.forwardFriction;
+                fc.stiffness = 10;
+                wc.forwardFriction = fc;
+            }
+        }
     }
 }
