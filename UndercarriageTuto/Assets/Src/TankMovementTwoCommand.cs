@@ -22,30 +22,17 @@ public class TankMovementTwoCommand : MonoBehaviour
         float inputTrackRight = Input.GetAxis("TrackRight");
         //ApplyForwardFriction(trackLeft, trackRight, inputTrackLeft, inputTrackRight);
 
-        float motorLeft = maxMotorTorque * inputTrackLeft;
+        WheelColliderBehavior(trackLeft, trackRight, inputTrackLeft, inputTrackRight);
+
         float rpmLeft = WheelTrackAlignment(trackLeft);
         foreach (WheelCollider wc in trackLeft.colliders)
-        {
-            if (motorLeft == 0.0f) {
-                wc.brakeTorque = 1000.0f;
-            } else {
-                wc.brakeTorque = 0.0f;
-                wc.motorTorque = motorLeft;
-            }
-            
+        {    
             ApplyLocalPositionToVisuals(wc, rpmLeft, delta);
         }
 
-        float motorRight = maxMotorTorque * inputTrackRight;
         float rpmRight = WheelTrackAlignment(trackRight);
         foreach (WheelCollider wc in trackRight.colliders)
         {
-            if (motorRight == 0.0f) {
-                wc.brakeTorque = 1000.0f;
-            } else {
-                wc.brakeTorque = 0.0f;
-                wc.motorTorque = motorRight;
-            }
             ApplyLocalPositionToVisuals(wc, rpmRight, delta);
         }
     }
@@ -94,6 +81,31 @@ public class TankMovementTwoCommand : MonoBehaviour
                 WheelFrictionCurve fc = wc.forwardFriction;
                 fc.stiffness = 10;
                 wc.forwardFriction = fc;
+            }
+        }
+    }
+
+    public void WheelColliderBehavior(Track trackLeft, Track trackRight, float inputTrackLeft, float inputTrackRight) {
+        float motorLeft = maxMotorTorque * inputTrackLeft;
+        float motorRight = maxMotorTorque * inputTrackRight;
+        float rpmLeft = WheelTrackAlignment(trackLeft);
+        float rpmRight = WheelTrackAlignment(trackRight);
+
+        foreach (WheelCollider wc in trackLeft.colliders) {
+            if (motorLeft == 0.0f && motorRight == 0.0f) {
+                wc.brakeTorque = 1000.0f;
+            } else {
+                wc.brakeTorque = 0.0f;
+                wc.motorTorque = motorLeft;
+            }
+        }
+
+        foreach (WheelCollider wc in trackRight.colliders) {
+            if (motorRight == 0.0f && motorLeft == 0.0f) {
+                wc.brakeTorque = 1000.0f;
+            } else {
+                wc.brakeTorque = 0.0f;
+                wc.motorTorque = motorRight;
             }
         }
     }
