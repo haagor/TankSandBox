@@ -26,7 +26,13 @@ public class TankMovementTwoCommand : MonoBehaviour
         float rpmLeft = WheelTrackAlignment(trackLeft);
         foreach (WheelCollider wc in trackLeft.colliders)
         {
-            wc.motorTorque = motorLeft;
+            if (motorLeft == 0.0f) {
+                wc.brakeTorque = 1000.0f;
+            } else {
+                wc.brakeTorque = 0.0f;
+                wc.motorTorque = motorLeft;
+            }
+            
             ApplyLocalPositionToVisuals(wc, rpmLeft, delta);
         }
 
@@ -34,7 +40,12 @@ public class TankMovementTwoCommand : MonoBehaviour
         float rpmRight = WheelTrackAlignment(trackRight);
         foreach (WheelCollider wc in trackRight.colliders)
         {
-            wc.motorTorque = motorRight;
+            if (motorRight == 0.0f) {
+                wc.brakeTorque = 1000.0f;
+            } else {
+                wc.brakeTorque = 0.0f;
+                wc.motorTorque = motorRight;
+            }
             ApplyLocalPositionToVisuals(wc, rpmRight, delta);
         }
     }
