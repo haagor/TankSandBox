@@ -56,7 +56,7 @@ public class TankShooting : MonoBehaviour
     private void FireForce()
     {
         shot.Play();
-        hull.AddForce(fireTransform.forward * (-3000000));
+        hull.AddForce(fireTransform.forward * (-300000));
     }
 
     void Explode()
