@@ -14,13 +14,33 @@ public class TankMovementTwoCommand : MonoBehaviour
     public Track trackRight;
     public float maxMotorTorque;
 
+    public Engine engine;
+    public EngineHUD engineHUD;
+    public AudioSource trackSound;
+
     public void FixedUpdate()
     {
         float delta = Time.fixedDeltaTime;
+        float inputTrackLeft = 0.0f;
+        float inputTrackRight = 0.0f;
 
-        float inputTrackLeft = Input.GetAxis("TrackLeft");
-        float inputTrackRight = Input.GetAxis("TrackRight");
+        engine.CheckActionEngine(engineHUD);
+
+        if (engine.IsEngineOn()) {
+            inputTrackLeft = Input.GetAxis("TrackLeft");
+            inputTrackRight = Input.GetAxis("TrackRight");
+        }
         //ApplyForwardFriction(trackLeft, trackRight, inputTrackLeft, inputTrackRight);
+
+        if (inputTrackLeft != 0.0f || inputTrackRight != 0.0f) {
+            if (!trackSound.isPlaying) {
+                trackSound.Play();
+            }
+        } else {
+            if (trackSound.isPlaying) {
+                trackSound.Stop();
+            }
+        }
 
         WheelColliderBehavior(trackLeft, trackRight, inputTrackLeft, inputTrackRight);
 

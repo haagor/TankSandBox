@@ -18,13 +18,13 @@ public class CameraMovement : MonoBehaviour
             rotateHorizontal * sensitivity,
             0);
 
-        float rotateVertical = Input.GetAxis("Mouse Y");
-        canon_pivot_rotation += Input.GetAxis("Mouse Y") * sensitivity;
-        if (canon_pivot_rotation < 30 && canon_pivot_rotation > -20)
+        float rotateVertical = -Input.GetAxis("Mouse Y");
+        canon_pivot_rotation += rotateVertical * sensitivity;
+        if (canon_pivot_rotation < 20 && canon_pivot_rotation > -20)
         {
             canon_pivot.transform.Rotate(
-                0,
                 rotateVertical * sensitivity,
+                0,
                 0);
         }
     }
