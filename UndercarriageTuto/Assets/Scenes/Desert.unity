@@ -301,6 +301,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
+    - target: {fileID: 8184562915805932619, guid: 5bbefa60c9a2c504c94782980b3d8373,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.487
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bbefa60c9a2c504c94782980b3d8373, type: 3}
 --- !u!4 &151715145 stripped
@@ -340,7 +345,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2dc9af48d973edd448e0055958a787fd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.309
+  m_Volume: 0.097
   m_Pitch: 1
   Loop: 0
   Mute: 0
