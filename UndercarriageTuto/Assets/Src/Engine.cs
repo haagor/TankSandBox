@@ -16,7 +16,6 @@ public class Engine : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("jumping");
             if (!engineOn)
             {
                 engineOn = true;
