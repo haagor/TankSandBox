@@ -1211,6 +1211,51 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[1].value
+      value: -0.13513163
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780820905451335225, guid: 0d95a09062578a2449885cab46c9831d,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4287106430629894673, guid: 0d95a09062578a2449885cab46c9831d,
         type: 3}
       propertyPath: m_Name

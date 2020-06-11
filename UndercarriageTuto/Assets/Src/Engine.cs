@@ -5,6 +5,7 @@ using UnityEngine;
 public class Engine : MonoBehaviour
 {
     public AudioSource engineSound;
+    public ParticleSystem engineSmoke;
     private bool engineOn = false;
 
     public bool IsEngineOn()
@@ -20,12 +21,14 @@ public class Engine : MonoBehaviour
             {
                 engineOn = true;
                 engineSound.Play();
+                engineSmoke.Play();
                 engineHUD.StartEngine();
             }
             else
             {
                 engineOn = false;
                 engineSound.Stop();
+                engineSmoke.Stop();
                 engineHUD.StopEngine();
             }
         }

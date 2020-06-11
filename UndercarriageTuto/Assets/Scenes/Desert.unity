@@ -427,6 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engineSound: {fileID: 483096510}
+  engineSmoke: {fileID: 0}
 --- !u!82 &483096509
 AudioSource:
   m_ObjectHideFlags: 0
@@ -742,6 +743,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 151715145}
     m_Modifications:
+    - target: {fileID: 8548842439974637780, guid: 0c609bb283695924bab9fd9c273625b2,
+        type: 3}
+      propertyPath: engineSmoke
+      value: 
+      objectReference: {fileID: 2033243223}
     - target: {fileID: 8548842439974637783, guid: 0c609bb283695924bab9fd9c273625b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -975,6 +981,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e509bf80b56d12e49ba00d363abb86ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &2033243223 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1248709982719870478, guid: 5bbefa60c9a2c504c94782980b3d8373,
+    type: 3}
+  m_PrefabInstance: {fileID: 151715144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2144374364
 GameObject:
   m_ObjectHideFlags: 0
