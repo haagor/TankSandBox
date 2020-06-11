@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Track
 {
     public List<WheelCollider> colliders;
+    public List<ParticleSystem> trackDust;
 }
 
 public class TankMovementTwoCommand : MonoBehaviour
@@ -30,6 +31,7 @@ public class TankMovementTwoCommand : MonoBehaviour
             inputTrackLeft = Input.GetAxis("TrackLeft");
             inputTrackRight = Input.GetAxis("TrackRight");
         }
+        ApplyDust(trackLeft.trackDust, trackRight.trackDust, inputTrackLeft, inputTrackRight);
         //ApplyForwardFriction(trackLeft, trackRight, inputTrackLeft, inputTrackRight);
 
         if (inputTrackLeft != 0.0f || inputTrackRight != 0.0f) {
@@ -126,6 +128,25 @@ public class TankMovementTwoCommand : MonoBehaviour
             } else {
                 wc.brakeTorque = 0.0f;
                 wc.motorTorque = motorRight;
+            }
+        }
+    }
+
+        public void ApplyDust(List<ParticleSystem> trackLeft, List<ParticleSystem> trackRight, float inputTrackLeft, float inputTrackRight) {
+        foreach (ParticleSystem ps in trackLeft) {
+            if (inputTrackLeft == 0 && inputTrackRight == 0) {
+                ps.Stop();
+            } else {
+                if (!ps.isPlaying)
+                ps.Play();
+            }
+        }
+        foreach (ParticleSystem ps in trackRight) {
+            if (inputTrackLeft == 0 && inputTrackRight == 0) {
+                ps.Stop();
+            } else {
+                if (!ps.isPlaying)
+                ps.Play();
             }
         }
     }
