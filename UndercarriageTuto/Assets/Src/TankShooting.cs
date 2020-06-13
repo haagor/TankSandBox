@@ -18,7 +18,7 @@ public class TankShooting : MonoBehaviour
     private void Start()
     {
         reload = false;
-        reloadBar.SetMaxReload(300);
+        reloadBar.SetMaxReload(100);
         reloadBar.SetReloadLevel(0);
     }
 
@@ -33,7 +33,7 @@ public class TankShooting : MonoBehaviour
         }
         if (reload)
         {
-            if (Time.time - startingTimeReload > 3)
+            if (Time.time - startingTimeReload > 1)
             {
                 reload = false;
             }
@@ -50,7 +50,7 @@ public class TankShooting : MonoBehaviour
 
         reload = true;
         startingTimeReload = Time.time;
-        reloadBar.SetReloadLevel(300);
+        reloadBar.SetReloadLevel(100);
     }
 
     private void FireForce()

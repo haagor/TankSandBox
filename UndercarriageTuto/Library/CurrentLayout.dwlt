@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 2055
     height: 1291
-  m_MinSize: {x: 681, y: 498}
-  m_MaxSize: {x: 14002, y: 14048}
+  m_MinSize: {x: 683, y: 498}
+  m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 65
+  controlID: 116
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 417
     height: 1291
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 66
+  controlID: 54
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 67
+  controlID: 55
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,20 +337,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Tank
+    - Assets/3DModel
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Tank
+  - Assets/3DModel
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\haag\workspace\TankSandBox\UndercarriageTuto
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ec0a0000
-    m_LastClickedID: 2796
-    m_ExpandedIDs: 00000000c0090000ec0a00003c0b0000ba0c0000b40d0000e42f0000e62f0000e82f0000ea2f0000ec2f0000ee2f0000f02f0000f22f0000f42f000000ca9a3b
+    m_SelectedIDs: 7e3f0000
+    m_LastClickedID: 16254
+    m_ExpandedIDs: 00000000c2090000ee0a00003e0b0000bc0c0000b80d0000523000005430000056300000583000005a3000005c3000005e30000060300000623000007e3f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -378,7 +378,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c0090000ec0a00003c0b00003e0b0000aa0c0000ba0c0000b40d0000e42f0000e62f0000e82f0000ea2f0000ec2f0000ee2f0000f02f0000f22f0000f42f0000
+    m_ExpandedIDs: 00000000c2090000ee0a00003e0b0000bc0c0000b80d0000523000005430000056300000583000005a3000005c3000005e3000006030000062300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -497,9 +497,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3c8ffeff
-      m_LastClickedID: -94404
-      m_ExpandedIDs: 5861000074610000
+      m_SelectedIDs: 94740000
+      m_LastClickedID: 29844
+      m_ExpandedIDs: 7e74000094740000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -554,9 +554,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.61064506, y: -0.11797014, z: -1.2800739}
+    m_Target: {x: 0.55952024, y: -0.052898705, z: -0.048327923}
     speed: 2
-    m_Value: {x: -0.61064506, y: -0.11797014, z: -1.2800739}
+    m_Value: {x: 0.55952024, y: -0.052898705, z: -0.048327923}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -584,13 +584,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.023163477, y: 0.8072269, z: -0.031748734, w: 0.5889315}
+    m_Target: {x: -0.058637243, y: 0.068555556, z: -0.004036894, w: -0.9959144}
     speed: 2
-    m_Value: {x: 0.023163477, y: 0.8072269, z: -0.031748734, w: 0.5889315}
+    m_Value: {x: -0.058637243, y: 0.068555556, z: -0.004036894, w: -0.9959144}
   m_Size:
-    m_Target: 2.2818716
+    m_Target: 9.488405
     speed: 2
-    m_Value: 2.2818716
+    m_Value: 9.488405
   m_Ortho:
     m_Target: 0
     speed: 2
