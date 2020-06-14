@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 2055
     height: 1291
-  m_MinSize: {x: 683, y: 498}
-  m_MaxSize: {x: 14004, y: 14048}
+  m_MinSize: {x: 679, y: 498}
+  m_MaxSize: {x: 14002, y: 14048}
   vertical: 0
-  controlID: 119
+  controlID: 49
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,10 +216,10 @@ MonoBehaviour:
     y: 0
     width: 1638
     height: 1291
-  m_MinSize: {x: 406, y: 498}
+  m_MinSize: {x: 404, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 120
+  controlID: 13
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -241,10 +241,10 @@ MonoBehaviour:
     y: 0
     width: 1638
     height: 781
-  m_MinSize: {x: 406, y: 224}
-  m_MaxSize: {x: 8006, y: 4024}
+  m_MinSize: {x: 404, y: 224}
+  m_MaxSize: {x: 8004, y: 4024}
   vertical: 0
-  controlID: 121
+  controlID: 14
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,20 +337,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/3DModel/Track
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/3DModel/Track
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\haag\workspace\TankSandBox\UndercarriageTuto
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c20c0000
-    m_LastClickedID: 3266
-    m_ExpandedIDs: 00000000ca090000f60a0000480b0000e20b0000d20c0000da0d0000b42b0000b62b0000b82b0000ba2b0000bc2b0000be2b0000c02b0000c22b0000c42b000000ca9a3b
+    m_SelectedIDs: a40a0000
+    m_LastClickedID: 2724
+    m_ExpandedIDs: 00000000ce090000000b0000520b0000ec0b0000dc0c0000e60d0000122c0000142c0000162c0000182c00001a2c00001c2c00001e2c0000202c0000222c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -378,7 +378,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ca090000f60a0000480b0000e20b0000d20c0000da0d0000b42b0000b62b0000b82b0000ba2b0000bc2b0000be2b0000c02b0000c22b0000c42b0000
+    m_ExpandedIDs: 00000000ce090000000b0000520b0000ec0b0000dc0c0000e60d0000122c0000142c0000162c0000182c00001a2c00001c2c00001e2c0000202c0000222c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -499,21 +499,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 90f8ffffdefbffff
+      m_ExpandedIDs: dcfbffffdefbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Directional Light
-        m_OriginalName: Directional Light
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 11248
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -554,9 +554,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.14631867, y: 0.60107666, z: -1.895783}
+    m_Target: {x: -0.559206, y: -0.1258277, z: -0.54047275}
     speed: 2
-    m_Value: {x: 0.14631867, y: 0.60107666, z: -1.895783}
+    m_Value: {x: -0.559206, y: -0.1258277, z: -0.54047275}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -584,13 +584,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.17330074, y: 0.18321766, z: -0.032831717, w: -0.9671196}
+    m_Target: {x: -0.11090933, y: -0.05539802, z: 0.006191537, w: -0.99226606}
     speed: 2
-    m_Value: {x: -0.17330074, y: 0.18321766, z: -0.032831717, w: -0.9671196}
+    m_Value: {x: -0.11090933, y: -0.05539802, z: 0.006191537, w: -0.99226606}
   m_Size:
-    m_Target: 2.1452343
+    m_Target: 2.3547654
     speed: 2
-    m_Value: 2.1452343
+    m_Value: 2.3547654
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -661,18 +661,18 @@ MonoBehaviour:
       y: 17
       width: 1229
       height: 744
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 614.5, y: 372}
+    m_Scale: {x: 1.2667698, y: 1.2667698}
+    m_Translation: {x: 555.0436, y: 331.52216}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -614.5
-      y: -372
-      width: 1229
-      height: 744
+      x: -438.15665
+      y: -261.70673
+      width: 970.1842
+      height: 587.3206
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}

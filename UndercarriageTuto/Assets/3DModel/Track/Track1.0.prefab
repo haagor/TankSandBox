@@ -8,10 +8,10 @@ HingeJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142980029295853261}
   m_ConnectedBody: {fileID: 3432193021819054705}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: 0.12, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.28100002, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.16100001, y: 0, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -78,10 +78,10 @@ HingeJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484036243864402720}
   m_ConnectedBody: {fileID: 5612747472362260278}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: 0.12, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.283, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.16299999, y: 0, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -113,10 +113,10 @@ HingeJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2778847946557665342}
   m_ConnectedBody: {fileID: 3195698627550348669}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: 0.12, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.28, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.16, y: 0, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -148,10 +148,10 @@ HingeJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8565211321955587687}
   m_ConnectedBody: {fileID: 2137434368147874159}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: 0.12, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.281, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.16099998, y: 0, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
