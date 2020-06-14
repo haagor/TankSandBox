@@ -12,11 +12,11 @@ public class GearControl : MonoBehaviour
     {
         if (Input.GetKey("up"))
         {
-            z += 1;
+            z += 0.3f;
         }
         if (Input.GetKey("down"))
         {
-            z -= 1;
+            z -= 0.3f;
         }
         gearAxe.MoveRotation(Quaternion.Euler(0,0,z));
     }
