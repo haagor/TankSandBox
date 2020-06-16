@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 84
+  controlID: 101
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 97
+  controlID: 102
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 98
+  controlID: 103
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,19 +337,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/3DModel/Track
+    - Assets/Src
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/3DModel/Track
+  - Assets/Src
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\haag\workspace\TankSandBox\UndercarriageTuto
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a40a0000
-    m_LastClickedID: 2724
+    m_SelectedIDs: 520b0000
+    m_LastClickedID: 2898
     m_ExpandedIDs: 00000000ce090000000b0000520b0000ec0b0000dc0c0000e60d00005e2c0000602c0000622c0000642c0000662c0000682c00006a2c00006c2c00006e2c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000be310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -497,9 +497,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e2d9ffff
-      m_LastClickedID: -9758
-      m_ExpandedIDs: fad9fffffcd9ffffdcfbffffdefbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: dcfbffffdefbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -554,9 +554,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.4977163, y: 1.599475, z: -0.15425992}
+    m_Target: {x: -0.44438773, y: -0.020684987, z: -0.652717}
     speed: 2
-    m_Value: {x: -0.4977163, y: 1.599475, z: -0.15425992}
+    m_Value: {x: -0.44438773, y: -0.020684987, z: -0.652717}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -584,13 +584,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.004810712, y: -0.024270315, z: 0.00011675474, w: -0.9996938}
+    m_Target: {x: 0.14299555, y: -0.05220512, z: -0.007553259, w: -0.9883167}
     speed: 2
-    m_Value: {x: -0.0048107123, y: -0.024270317, z: 0.000116754745, w: -0.9996939}
+    m_Value: {x: 0.14299555, y: -0.05220512, z: -0.007553259, w: -0.9883167}
   m_Size:
-    m_Target: 2.85195
+    m_Target: 0.14804965
     speed: 2
-    m_Value: 2.85195
+    m_Value: 0.14804965
   m_Ortho:
     m_Target: 0
     speed: 2
