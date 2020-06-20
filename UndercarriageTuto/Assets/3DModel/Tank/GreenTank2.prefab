@@ -437,6 +437,7 @@ MonoBehaviour:
     - {fileID: 1462512925798065325}
     - {fileID: 1908730399457061459}
     - {fileID: 3156370768722851446}
+    trackDust: []
   trackRight:
     colliders:
     - {fileID: 773885527483424083}
@@ -444,6 +445,7 @@ MonoBehaviour:
     - {fileID: 6632178227042151665}
     - {fileID: 5323538494163178284}
     - {fileID: 1633421054279494837}
+    trackDust: []
   maxMotorTorque: 500
   engine: {fileID: 0}
   engineHUD: {fileID: 0}
