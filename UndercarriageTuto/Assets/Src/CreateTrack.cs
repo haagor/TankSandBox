@@ -21,8 +21,4 @@ public class CreateTrack : MonoBehaviour {
             links[i] = linkClone;
         }
     }
-
-    void Update() {
-        
-    }
 }
