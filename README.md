@@ -86,6 +86,8 @@ With the "trail renderer" component and the light apply on shader it is really e
 
 ### Terrain
 
+---
+
 ![](https://github.com/haagor/TankSandBox/blob/master/img/redSand1.PNG)
 ![](https://github.com/haagor/TankSandBox/blob/master/img/redSand2.PNG)
 
@@ -94,7 +96,6 @@ With the "trail renderer" component and the light apply on shader it is really e
 - Fog
 - Sky
 
----
 
 ---
 
