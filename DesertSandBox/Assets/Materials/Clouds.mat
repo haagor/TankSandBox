@@ -10,37 +10,51 @@ Material:
   m_Name: Clouds
   m_Shader: {fileID: -6465566751694194690, guid: b92c5b65b3aa4b14b923127278343d29,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _BLENDMODE_ALPHA _DOUBLESIDED_ON _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
+    RenderType: Transparent
   disabledShaderPasses:
-  - MOTIONVECTORS
   - TransparentBackface
+  - MOTIONVECTORS
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_14255EC3: 0.01
-    - Vector1_565910A9: 0.08
+    - Vector1_14255EC3: 0.03
+    - Vector1_1F35FD19: 2.7
+    - Vector1_2DE8FB89: -0.3
+    - Vector1_4AD49D82: 1.17
+    - Vector1_4D76819C: 1
+    - Vector1_565910A9: 0.1
+    - Vector1_58F9373A: 3
     - Vector1_6244CE01: 3
-    - Vector1_A521119D: 30
+    - Vector1_82B3579B: 0.01
+    - Vector1_82F34F29: 1.59
+    - Vector1_93B9C5A6: -1
+    - Vector1_A521119D: 26.08
+    - Vector1_B6C2F093: 0.1
+    - Vector1_D7B953DB: 3
+    - Vector1_D96572A2: 1
+    - _AddPrecomputedVelocity: 1
     - _AlphaCutoffEnable: 0
-    - _AlphaDstBlend: 0
+    - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
     - _BlendMode: 0
-    - _CullMode: 2
-    - _CullModeForward: 2
-    - _DoubleSidedEnable: 0
+    - _CullMode: 0
+    - _CullModeForward: 0
+    - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EnableFogOnTransparent: 1
     - _ReceivesSSR: 0
-    - _RenderQueueType: 1
+    - _RenderQueueType: 5
     - _RequireSplitLighting: 0
+    - _ShadowMatteFilter: 2.006836
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -52,17 +66,20 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SurfaceType: 0
+    - _SurfaceType: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 0
     - _TransparentZWrite: 1
     - _UseShadowThreshold: 0
-    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
+    - Color_8CE37492: {r: 0.9176471, g: 0.74509805, b: 0.65882355, a: 0}
+    - Color_B4DA5B3D: {r: 0.7735849, g: 0.54566365, b: 0.45612317, a: 0}
+    - Vector4_7268ABF9: {r: 0, g: 1, b: -1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &8366485930819925920
