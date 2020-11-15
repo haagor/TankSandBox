@@ -104,7 +104,9 @@ With the "trail renderer" component and the light apply on shader it is really e
 - Fog
 - Sky
 
-I followed this tutorial [https://www.youtube.com/watch?v=Y7r5n5TsX_E] to discover shader and try to obtain pretty cloud, and hope to make some sand storm. Here my first try with shader :
+I followed this tutorial [https://www.youtube.com/watch?v=Y7r5n5TsX_E] to discover shader, nodal programming and try to obtain pretty cloud, and hope to make some sand storm. Here my first try with shader :
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/CloudNode1.PNG)
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/Cloud1.PNG)
 
