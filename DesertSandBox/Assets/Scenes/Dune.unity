@@ -207,13 +207,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490070011}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.34191617, y: -0, z: -0, w: 0.9397305}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 39.987003, y: 0, z: 0}
 --- !u!114 &1490070014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 1825805693}
   - component: {fileID: 1825805692}
   - component: {fileID: 1825805695}
+  - component: {fileID: 1825805696}
   m_Layer: 0
   m_Name: Dune
   m_TagString: Untagged
@@ -409,7 +410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825805691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42acefc5719f2364589cb7302a6d745b, type: 3}
   m_Name: 
@@ -418,6 +419,25 @@ MonoBehaviour:
   width: 256
   height: 256
   scale: 20
+--- !u!114 &1825805696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825805691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e1038e4b475064e90e00b0e23ed797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depth: 40
+  width: 512
+  height: 512
+  scaleDunelvl1: 20
+  noisePower1: 1
+  scaleDunelvl2: 6
+  noisePower2: 3
 --- !u!1 &2010605729
 GameObject:
   m_ObjectHideFlags: 0
