@@ -112,5 +112,21 @@ I followed this tutorial [https://www.youtube.com/watch?v=Y7r5n5TsX_E] to discov
 
 ---
 
+#### Procedural Terrain
+
+I focused on desert. It seems to be the more easier terrain to generate. First of all I try to make it with Unity tool and script.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/duneProcedural1.0.PNG)
+
+The result is simple and it could cost lot of time to improve this visual. So I looked for tools. I found MapMagic and maked procedural dune.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/nodeMapMagic1.PNG)
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/DuneProcedural1.PNG)
+
+But this solution raise problem. Material are less flexible than our Unity solution. So I chosen to use nodal programmation like cloud part. I will not use Terrain object to combine 3D object and Shader. At this time I understand the interest of polygones and mesh.
+
+![](https://github.com/haagor/TankSandBox/blob/master/img/poly1.PNG)
+
 Simon P
 

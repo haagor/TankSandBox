@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 15
+  controlID: 143
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,8 +160,8 @@ MonoBehaviour:
     y: 0
     width: 387
     height: 1261
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 16
+  controlID: 144
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 17
+  controlID: 145
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -500,7 +500,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 8c480000
     m_LastClickedID: 18572
-    m_ExpandedIDs: 0000000070480000724800007448000076480000784800007a4800007c4800007e48000080480000824800008c480000fe4d00003a4e00003c4e0000a64e0000084f000000ca9a3b
+    m_ExpandedIDs: 000000003448000036480000384800003a4800003c4800003e48000040480000424800004448000046480000484800004a4800004c4800004e4800005048000052480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -528,7 +528,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000070480000724800007448000076480000784800007a4800007c4800007e4800008048000082480000
+    m_ExpandedIDs: 000000003448000036480000384800003a4800003c4800003e48000040480000424800004448000046480000484800004a4800004c4800004e4800005048000052480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -653,21 +653,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a8b9feffb0b9feffc2a2ffffb6e4ffffd6e6ffffdee6ffff06ebffff0eebffff66fbffff
+      m_ExpandedIDs: 66fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Main Terrain
-        m_OriginalName: Main Terrain
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -83590
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -713,9 +713,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 536.39355, y: 147.20132, z: 487.69873}
+    m_Target: {x: 547.72, y: 30.306168, z: 545.4863}
     speed: 2
-    m_Value: {x: 536.39355, y: 147.20132, z: 487.69873}
+    m_Value: {x: 547.72, y: 30.306168, z: 545.4863}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -761,13 +761,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.05416641, y: 0.9266733, z: -0.14755736, w: -0.3419447}
+    m_Target: {x: -0.05866516, y: 0.91454583, z: -0.14422885, w: -0.3737913}
     speed: 2
-    m_Value: {x: -0.053644188, y: 0.9267283, z: -0.14614101, w: -0.34196454}
+    m_Value: {x: -0.05887091, y: 0.91382074, z: -0.14411493, w: -0.37509564}
   m_Size:
-    m_Target: 484.57367
+    m_Target: 421.18976
     speed: 2
-    m_Value: 463.70685
+    m_Value: 386.41263
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -843,8 +843,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -760.5
     m_HBaseRangeMax: 760.5
-    m_VBaseRangeMin: -378
-    m_VBaseRangeMax: 378
+    m_VBaseRangeMin: -388.5
+    m_VBaseRangeMax: 388.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -861,11 +861,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1521
-      height: 756
+      height: 777
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 760.5, y: 378}
+    m_Translation: {x: 760.5, y: 388.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -873,9 +873,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -760.5
-      y: -378
+      y: -388.5
       width: 1521
-      height: 756
+      height: 777
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1521, y: 777}
@@ -909,29 +909,4 @@ MonoBehaviour:
     y: 898
     width: 1853
     height: 442
-  m_ViewDataDictionary: {fileID: 0}
---- !u!114 &25
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12059, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEditor:UnityEditor.Experimental.TerrainAPI:PaintTextureTool
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Failed to load
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 320
-    height: 550
   m_ViewDataDictionary: {fileID: 0}
