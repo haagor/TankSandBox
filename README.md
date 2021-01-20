@@ -124,7 +124,7 @@ The result is simple and it could cost lot of time to improve this visual. So I 
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/DuneProcedural1.PNG)
 
-But this solution raise problem. Material are less flexible than our Unity solution. So I chosen to use nodal programmation like cloud part. I will not use Terrain object to combine 3D object and Shader. At this time I understand the interest of polygones and mesh.
+But this solution raise problem : material are less flexible than our Unity solution. So I chosen to use nodal programmation like cloud part. I will not use Terrain object to combine 3D object and Shader. At this time I understand the interest of polygones and mesh.
 
 ![](https://github.com/haagor/TankSandBox/blob/master/img/poly1.PNG)
 
